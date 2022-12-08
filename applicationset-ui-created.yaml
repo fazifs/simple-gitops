@@ -1,0 +1,57 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: ApplicationSet
+  metadata:
+    name: dev-env-apps-ui
+    namespace: openshift-gitops
+  spec:
+    generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: aws-clusters
+        requeueAfterSeconds: 180
+    template:
+      metadata:
+        labels:
+          velero.io/exclude-from-backup: "true"
+        name: dev-env-apps-ui-{{name}}
+      spec:
+        destination:
+          namespace: gitops-apps
+          server: '{{server}}'
+        project: default
+        source:
+          path: argo-apps
+          repoURL: https://github.com/fazifs/ns-gitops-emea-ssa-f.git
+          targetRevision: appsets
+        syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
+          syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+  status:
+    conditions:
+    - lastTransitionTime: "2022-12-08T09:53:44Z"
+      message: Successfully generated parameters for all Applications
+      reason: ApplicationSetUpToDate
+      status: "False"
+      type: ErrorOccurred
+    - lastTransitionTime: "2022-12-08T09:53:44Z"
+      message: Successfully generated parameters for all Applications
+      reason: ParametersGenerated
+      status: "True"
+      type: ParametersGenerated
+    - lastTransitionTime: "2022-12-08T09:53:44Z"
+      message: ApplicationSet up to date
+      reason: ApplicationSetUpToDate
+      status: "True"
+      type: ResourcesUpToDate
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

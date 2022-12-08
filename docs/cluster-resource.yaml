@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"ApplicationSet","metadata":{"annotations":{},"name":"dev-env-apps","namespace":"openshift-gitops"},"spec":{"generators":[{"git":{"directories":[{"path":"apps/*"}],"repoURL":"https://github.com/RedHat-EMEA-SSA-Team/ns-apps","revision":"appsets"}}],"template":{"metadata":{"name":"{{path.basename}}"},"spec":{"destination":{"server":"https://kubernetes.default.svc"},"project":"apps-project","source":{"path":"{{path}}","repoURL":"https://github.com/RedHat-EMEA-SSA-Team/ns-apps","targetRevision":"appsets"},"syncPolicy":{"automated":{"prune":true,"selfHeal":true}}}}}}
+  creationTimestamp: "2022-12-07T09:46:20Z"
+  generation: 1
+  name: dev-env-apps
+  namespace: openshift-gitops
+  resourceVersion: "1770193"
+  uid: 540556ad-4a7e-469e-a7e4-d73d2ff70bed
+spec:
+  generators:
+  - git:
+      directories:
+      - path: apps/*
+      repoURL: https://github.com/RedHat-EMEA-SSA-Team/ns-apps
+      revision: appsets
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      destination:
+        server: https://kubernetes.default.svc
+      project: apps-project
+      source:
+        path: '{{path}}'
+        repoURL: https://github.com/RedHat-EMEA-SSA-Team/ns-apps
+        targetRevision: appsets
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+status:
+  conditions:
+  - lastTransitionTime: "2022-12-07T09:46:21Z"
+    message: Successfully generated parameters for all Applications
+    reason: ApplicationSetUpToDate
+    status: "False"
+    type: ErrorOccurred
+  - lastTransitionTime: "2022-12-07T09:46:21Z"
+    message: Successfully generated parameters for all Applications
+    reason: ParametersGenerated
+    status: "True"
+    type: ParametersGenerated
+  - lastTransitionTime: "2022-12-07T09:46:21Z"
+    message: ApplicationSet up to date
+    reason: ApplicationSetUpToDate
+    status: "True"
+    type: ResourcesUpToDate

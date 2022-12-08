@@ -1,0 +1,9 @@
+---
+apiVersion: cluster.open-cluster-management.io/v1alpha1
+kind: Placement
+metadata:
+  name: aws-clusters
+  namespace: openshift-gitops
+spec:
+  clusterSets:
+    - aws-clusters
