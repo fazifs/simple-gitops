@@ -3,7 +3,7 @@
 You can read more about application sets here: 
 https://cloud.redhat.com/blog/getting-started-with-applicationsets
 
-## To deploy the application, you can run the application set yaml in the 
+## To deploy the application, you can run the appproject and applicatioset objects, by running the yaml files in application-sets and app-projects directories seperately or trun the kustomization file in the deploy folder to include both at the same time.
 
 ```
 oc apply -k deploy/
