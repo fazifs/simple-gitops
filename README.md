@@ -1,6 +1,6 @@
 
 # ArgoCD Application Sets
-You can read more about argocd application sets [here] (https://cloud.redhat.com/blog/getting-started-with-applicationsets 'here') 
+You can read more about argocd application sets [here](https://cloud.redhat.com/blog/getting-started-with-applicationsets) 
 
 
 ## What does this do
