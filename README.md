@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-# NaaS using GitOps - Application Sets
 
-Repository for deploy GitOps examples
+# pplication Sets
 
 ## Deploy Dev Environment
 
