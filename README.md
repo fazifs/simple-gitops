@@ -4,7 +4,7 @@ You can read more about application sets here:
 https://cloud.redhat.com/blog/getting-started-with-applicationsets
 
 ## How to deply 
-To deploy the application, you can run the appproject and applicatioset objects, by running the yaml files in application-sets and app-projects directories seperately or trun the kustomization file in the deploy folder to include both at the same time.
+To deploy the application, you can run the appproject and applicatioset objects, by running the yaml files in application-sets and app-projects directories seperately or run the kustomization file in the deploy folder to include both at the same time.
 
 ```
 oc apply -k deploy/
