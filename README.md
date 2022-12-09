@@ -16,11 +16,3 @@ Just delete the application set and the ArgoCD ApplicationSet contoller will do 
 ```
 oc delete applicationset --all -n openshift-gitops
 ```
-
-## Links of interest
-
-* [Getting Started with Application Sets](https://cloud.redhat.com/blog/getting-started-with-applicationsets)
-* [GitOps Guide to the Galaxy (Ep 15): Introducing the App of Apps and ApplicationSets](https://www.youtube.com/watch?v=HqzUIJMYnfY&ab_channel=OpenShift)
-=======
-# simple-gitops
->>>>>>> 4f554bf12a5c469948aa898f5b33fc86664c203f
