@@ -3,7 +3,7 @@
 You can read more about argocd application sets [here](https://cloud.redhat.com/blog/getting-started-with-applicationsets) 
 
 
-## What does this do
+## What does this repo do
 The argocd application set in this repo deploys the bgd and pacman apps from the following repository https://github.com/RedHat-EMEA-SSA-Team/ns-apps, the appsets branch.
 
 ## How to deply 
