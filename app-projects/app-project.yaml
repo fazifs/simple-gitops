@@ -10,6 +10,6 @@ spec:
   destinations:
   - namespace: '*'
     server: '*'
-    name: local-cluster
+    name: '*'
   sourceRepos:
   - '*'
