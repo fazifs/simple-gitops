@@ -21,9 +21,9 @@ spec:
           prune: true
           selfHeal: true
       source:
-        repoURL: https://github.com/fazifs/gitops-examples
-        targetRevision: main
-        path: bgdk
+        repoURL: https://github.com/RedHat-EMEA-SSA-Team/ns-apps
+        targetRevision: appsets
+        path: apps/bgd
       destination:
         server: "{{server}}"
 ---

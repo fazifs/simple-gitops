@@ -23,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/fazifs/gitops-examples
         targetRevision: main
-        path: bgdk
+        path: bgd
       destination:
         server: "{{server}}"
 ---
